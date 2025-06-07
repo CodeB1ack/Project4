@@ -1,5 +1,6 @@
 import React from "react";
 import "./LoginRegister.css";
+import { FaUser, FaLock  } from "react-icons/fa";
 
 const LoginRegister = () => {
     return (
@@ -7,11 +8,13 @@ const LoginRegister = () => {
             <div className="form-box login">
                 <form action="">
                     <h1>Login</h1>
-                    <div className="input box">
+                    <div className="input-box">
                         <input type="text" placeholder="Username" required/>
+                        <FaUser className="icon" />
                     </div>
-                    <div className="input box">
+                    <div className="input-box">
                         <input type="password" placeholder="Password" required/>
+                        <FaLock className="icon"/>
                     </div>
                     <div className="remember-forgot">
                         <label>
@@ -22,7 +25,7 @@ const LoginRegister = () => {
                     </div>
                     <button type="submit" className="btn">Login</button>
                     <div className="register-link"> 
-                        <p>Don't have an account?</p> <a href="#">Register now</a>
+                        <p>Don't have an account?</p> <a href="#">Register</a>
                     </div>
                 </form>
             </div>
