@@ -14,4 +14,6 @@ body {
   align-items: center;
   height: 100vh;
   background: url('./Components/Assets/c6a67860-8a8c-4912-9839-12e4c062e245.png') no-repeat;
+  background-size: cover;
+  background-position: center;
 }
