@@ -10,8 +10,13 @@
     color: white;
     display : flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
     transition: height .2s ease;
+    margin-top: 150px;
+    left: 50%;
+    
+  
 }
 
 .wrapper.active {

@@ -15,9 +15,12 @@ function App() {
     </div> 
   } />
       <Route path={'/login'} element={
+        <main>
+        <Header />
           <div>
           <LoginRegister />
         </div>
+        </main>
       }/>
     </Routes>
   )

@@ -2,19 +2,25 @@ header{
     display: flex;
     justify-content: space-between;
     background-color: aliceblue;
-    
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    background-color: transparent;
+    color: white;
 }
 
 header a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    padding: 20px 30px;
    
 }
 
 header a.logo {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: bold;
 }
 
