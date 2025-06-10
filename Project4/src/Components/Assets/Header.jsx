@@ -1,11 +1,12 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
+
 export default function Header() {
     return (
-        <header className="header">
+        <header>
             <a href="" className="logo">Main</a>
             <nav className="nav">
-              <a href="">Login</a>
-              <a href="">Register</a>
+              <Link to="/login">Login / Register</Link>
             </nav>
         </header>
     );

@@ -1,7 +1,24 @@
 header{
-    background-color: #ffffff;
-    padding: 15px;
-    color: white;
-    text-align: center;
-    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+    
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-bottom: 50px;
+   
+}
+
+header a.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
 }

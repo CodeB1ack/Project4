@@ -14,7 +14,7 @@ function App() {
       </main> 
     </div> 
   } />
-      <Route path={'./login'} element={
+      <Route path={'/login'} element={
           <div>
           <LoginRegister />
         </div>
