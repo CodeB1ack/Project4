@@ -7,7 +7,7 @@ function App() {
 
   return (
     <Routes>
-      <Route index element={  
+      <Route path={'/home'} index element={  
         <div>
       <main>
         <Header />
