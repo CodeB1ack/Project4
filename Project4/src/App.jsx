@@ -1,6 +1,7 @@
 
 import LoginRegister from './Components/Assets/LoginRegister/LoginRegister'
 import Header from './Components/Assets/Header'
+import Home from './Components/Assets/Home'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <main>
           <Header />
           <div>
-            <h1>Welcome to the Home Page</h1>
+            <Home />
           </div>
         </main>
       }/>

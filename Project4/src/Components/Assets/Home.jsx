@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Home() {
-const [category, setCategory] = useState('');
-const [userId, setUserId] = useState('');
-const [questions, setQuestions] = useState([]);
-const [displayedQuestion, setDisplayedQuestion] = useState(null);
+    const [category, setCategory] = useState('');
+    const [userId, setUserId] = useState('');
+    const [questions, setQuestions] = useState([]);
+    const [displayedQuestion, setDisplayedQuestion] = useState(null);
 
 useEffect(() => {
 const fetchQuestions = async () => {
@@ -27,7 +27,7 @@ fetchQuestions();
 }, [category, userId]);
 
 return (
-<div style={{ textAlign: 'center', marginTop: '2rem' }}>
+<div style={{ textAlign: 'center', padding: '2rem' }}>
 <h1>Question Picker</h1>
 
 <select onChange={(e) => setCategory(e.target.value)} defaultValue="">
