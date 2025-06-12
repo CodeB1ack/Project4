@@ -7,7 +7,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path={'/home'} index element={  
+      <Route path={''} index element={  
         <div>
       <main>
         <Header />
@@ -20,6 +20,14 @@ function App() {
           <div>
           <LoginRegister />
         </div>
+        </main>
+      }/>
+      <Route path={'/'} element={
+        <main>
+          <Header />
+          <div>
+            <h1>Welcome to the Home Page</h1>
+          </div>
         </main>
       }/>
     </Routes>
