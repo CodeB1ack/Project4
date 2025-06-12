@@ -1,0 +1,9 @@
+.picker {
+    background-color: rgba(240, 248, 255, 0.588);
+    margin-top: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    
+}

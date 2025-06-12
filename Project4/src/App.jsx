@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path={''} index element={  
+      <Route path={'/'} index element={  
         <div>
       <main>
         <Header />
@@ -23,7 +23,7 @@ function App() {
         </div>
         </main>
       }/>
-      <Route path={'/'} element={
+      <Route path={'/home'} element={
         <main>
           <Header />
           <div>
