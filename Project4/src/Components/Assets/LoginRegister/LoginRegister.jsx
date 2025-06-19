@@ -52,7 +52,7 @@ const LoginRegister = () => {
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {success && <p style={{ color: 'green' }}>{success}</p>}
                 <form action="" onSubmit={handleSubmit}>
-                    <h1>{isRegister ? 'Register' : 'Login'}Login</h1>
+                    <h1>{isRegister ? 'Register' : 'Login'}</h1>
                     <div className="input-box">
                         <input type="text" placeholder="Username" required/>
                         <FaUser className="icon" />
@@ -77,7 +77,7 @@ const LoginRegister = () => {
 
             <div className="form-box register">
                 <form action="" onSubmit={handleSubmit}>
-                    <h1>Registration</h1>
+                    <h1>{isRegister ? 'Login' : 'Register'}</h1>
                     <div className="input-box">
                         <input type="text" placeholder="Username" required/>
                         <FaUser className="icon" />
@@ -96,7 +96,7 @@ const LoginRegister = () => {
                             I agree to the Terms & Conditions
                         </label>
                     </div>
-                    <button type="submit" className="btn">{isRegister ? 'Register' : 'Login'}Register</button>
+                    <button type="submit" className="btn" >{isRegister ? 'Register' : 'Login'}</button>
                     <div className="register-link"> 
                         <p>Already have an account? <a href="#" onClick={loginLink}>Login</a></p>
                     </div>
