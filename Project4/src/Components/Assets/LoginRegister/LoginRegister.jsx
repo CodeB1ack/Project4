@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import "./LoginRegister.css";
 import { FaUser, FaLock, FaEnvelope  } from "react-icons/fa";
+import axios from 'axios';
+
 
 const LoginRegister = () => {
 
     const [action , setAction] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isRegister, setIsRegister] = useState(false); // Toggle between login and register
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
+
 
     const registerLink = () => {
         setAction(' active');
@@ -14,18 +22,43 @@ const LoginRegister = () => {
         setAction(``);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError(null);
+        setSuccess(null);
+
+        try {
+            const endpoint = isRegister
+                ? 'http://localhost:5000/api/register'
+                : 'http://localhost:5000/api/login';
+
+            const response = await axios.post(endpoint, { email, password });
+
+            if (isRegister) {
+                setSuccess(response.data.message); // Registration success message
+            } else {
+                const { token } = response.data;
+                localStorage.setItem('authToken', token); // Store token for authentication
+                setSuccess('Login successful!');
+            }
+        } catch (err) {
+            setError(err.response?.data?.message || 'Something went wrong.');
+        }
+    };
 
     return (
         <div className={`wrapper${action}`}>
             <div className="form-box login">
-                <form action="">
-                    <h1>Login</h1>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {success && <p style={{ color: 'green' }}>{success}</p>}
+                <form action="" onSubmit={handleSubmit}>
+                    <h1>{isRegister ? 'Register' : 'Login'}Login</h1>
                     <div className="input-box">
                         <input type="text" placeholder="Username" required/>
                         <FaUser className="icon" />
                     </div>
                     <div className="input-box">
-                        <input type="password" placeholder="Password" required/>
+                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                         <FaLock className="icon"/>
                     </div>
                     <div className="remember-forgot">
@@ -43,18 +76,18 @@ const LoginRegister = () => {
             </div>
 
             <div className="form-box register">
-                <form action="">
+                <form action="" onSubmit={handleSubmit}>
                     <h1>Registration</h1>
                     <div className="input-box">
                         <input type="text" placeholder="Username" required/>
                         <FaUser className="icon" />
                     </div>
                     <div className="input-box">
-                        <input type="email" placeholder="Email" required/>
+                        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                         <FaEnvelope className="icon" />
                     </div>
                     <div className="input-box">
-                        <input type="password" placeholder="Password" required/>
+                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                         <FaLock className="icon"/>
                     </div>
                     <div className="remember-forgot">
@@ -63,7 +96,7 @@ const LoginRegister = () => {
                             I agree to the Terms & Conditions
                         </label>
                     </div>
-                    <button type="submit" className="btn">Register</button>
+                    <button type="submit" className="btn">{isRegister ? 'Register' : 'Login'}Register</button>
                     <div className="register-link"> 
                         <p>Already have an account? <a href="#" onClick={loginLink}>Login</a></p>
                     </div>
