@@ -9,11 +9,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/qa', { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use('/api/questions', questionRoutes);
 
-app.listen(5000, () => console.log('Server running on port 5000'));
+app.listen(5173, () => console.log('Server running on port 5173'));
 
 // MySQL connection
 const db = mysql.createConnection({
@@ -103,7 +102,7 @@ app.post('/api/login', (req, res) => {
 });
 
 // Start the server
-const PORT = 5000;
+const PORT = 5173;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

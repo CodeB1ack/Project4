@@ -29,8 +29,8 @@ const LoginRegister = () => {
 
         try {
             const endpoint = isRegister
-                ? 'http://localhost:5000/api/register'
-                : 'http://localhost:5000/api/login';
+                ? 'http://localhost:5173/api/register'
+                : 'http://localhost:5173/api/login';
 
             const response = await axios.post(endpoint, { email, password });
 
