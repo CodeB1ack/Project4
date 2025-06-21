@@ -12,13 +12,13 @@ app.use(bodyParser.json());
 
 app.use('/api/questions', questionRoutes);
 
-app.listen(5173, () => console.log('Server running on port 5173'));
+app.listen(5173, () => console.log('Server running on port 3306'));
 
 // MySQL connection
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'yourpassword',
+    password: 'Gamer4life!',
     database: 'auth_db',
 });
 
@@ -102,7 +102,7 @@ app.post('/api/login', (req, res) => {
 });
 
 // Start the server
-const PORT = 5173;
+const PORT = 3306;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
