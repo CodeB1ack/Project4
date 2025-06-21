@@ -96,7 +96,7 @@ const LoginRegister = () => {
                             I agree to the Terms & Conditions
                         </label>
                     </div>
-                    <button type="submit" className="btn" >{isRegister ? 'Register' : 'Login'}</button>
+                    <button type="submit" className="btn" >{isRegister ? 'Login' : 'Register'}</button>
                     <div className="register-link"> 
                         <p>Already have an account? <a href="#" onClick={loginLink}>Login</a></p>
                     </div>
